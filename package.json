@@ -1,0 +1,24 @@
+{
+  "name": "qa-superpowers",
+  "version": "1.0.0",
+  "description": "QA-first development methodology for Claude Code. Spec → Tests → TDD → QA Review. Extends Superpowers with full QA ownership, MEMORY.md session continuity, and small-chunk discipline.",
+  "keywords": [
+    "claude-code",
+    "qa",
+    "tdd",
+    "testing",
+    "methodology",
+    "skills"
+  ],
+  "author": "Automuss Technologies Ltd",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NwaoghorPraise2/qa-superpowers.git"
+  },
+  "claude-code": {
+    "type": "plugin",
+    "skills_dir": "skills",
+    "entry": "CLAUDE.md"
+  }
+}

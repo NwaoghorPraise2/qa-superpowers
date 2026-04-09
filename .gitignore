@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.log
+
+# Never commit MEMORY.md from any project using this plugin
+MEMORY.md
+
+.early.coverage
