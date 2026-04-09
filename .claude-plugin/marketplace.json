@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "qa-superpowers",
-      "source": ".",
+      "source": "plugin",
       "description": "QA-first development methodology. Spec → Tests → TDD → QA Review. Full session continuity via MEMORY.md. Small-chunk discipline enforced.",
       "version": "1.0.0",
       "author": {

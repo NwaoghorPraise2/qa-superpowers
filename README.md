@@ -17,13 +17,13 @@ Nothing skips a stage. Nothing merges without a QA gate passing.
 
 ## What's New vs Superpowers
 
-| Superpowers | QA Superpowers |
-|---|---|
+| Superpowers                         | QA Superpowers                                                                                                |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | Brainstorming → Plan → TDD → Review | Brainstorming → **Spec** → Plan → **Test Strategy** → **Write Tests (failing)** → TDD → **QA Review** → Merge |
-| Skills auto-load | Skills auto-load |
-| Plan files for context | **MEMORY.md** for full session continuity |
-| Small tasks encouraged | Small tasks **enforced** (2–5 min hard limit) |
-| Code review gate | **Full QA review gate** (spec compliance + coverage + quality + regression) |
+| Skills auto-load                    | Skills auto-load                                                                                              |
+| Plan files for context              | **MEMORY.md** for full session continuity                                                                     |
+| Small tasks encouraged              | Small tasks **enforced** (2–5 min hard limit)                                                                 |
+| Code review gate                    | **Full QA review gate** (spec compliance + coverage + quality + regression)                                   |
 
 ## Installation
 
@@ -42,7 +42,7 @@ git clone https://github.com/your-username/qa-superpowers .claude/plugins/qa-sup
 
 ### Verify
 
-Start a new Claude Code session and say: *"how does this work"* — the `using-qa-superpowers` skill should load.
+Start a new Claude Code session and say: _"how does this work"_ — the `using-qa-superpowers` skill should load.
 
 ## Quick Start
 
@@ -89,33 +89,34 @@ Every project using this plugin maintains a `MEMORY.md` in its root directory.
 ```
 
 MEMORY.md is:
+
 - **Read** at the start of every session (via `session-init`)
 - **Updated** at the end of every session with what was done and what's next
 - The single source of truth for project continuity across sessions
 
 ## Skills
 
-| Skill | Purpose |
-|---|---|
-| `session-init` | Load MEMORY.md, confirm .gitignore |
-| `brainstorming` | Explore requirements before code |
-| `define-spec` | Formal spec (FRs + ACs) |
-| `writing-plans` | 2–5 min implementation tasks |
-| `test-strategy` | Layered test coverage plan |
-| `write-tests` | Write failing tests first |
-| `tdd-implement` | RED-GREEN-REFACTOR per chunk |
-| `executing-plans` | Batch execution with checkpoints |
-| `subagent-driven-development` | Subagent dispatch with 2-stage review |
-| `dispatching-parallel-agents` | Concurrent agents for independent tasks |
-| `systematic-debugging` | 4-phase root cause process |
-| `verification-before-completion` | Evidence-based completion |
-| `requesting-code-review` | Pre-review checklist + PR format |
-| `receiving-code-review` | Structured review response |
-| `using-git-worktrees` | Isolated branch workspaces |
-| `finishing-a-development-branch` | Merge / PR / close |
-| `qa-review` | Final gate before merge |
-| `writing-skills` | Author new skills |
-| `using-qa-superpowers` | Orientation and workflow overview |
+| Skill                            | Purpose                                 |
+| -------------------------------- | --------------------------------------- |
+| `session-init`                   | Load MEMORY.md, confirm .gitignore      |
+| `brainstorming`                  | Explore requirements before code        |
+| `define-spec`                    | Formal spec (FRs + ACs)                 |
+| `writing-plans`                  | 2–5 min implementation tasks            |
+| `test-strategy`                  | Layered test coverage plan              |
+| `write-tests`                    | Write failing tests first               |
+| `tdd-implement`                  | RED-GREEN-REFACTOR per chunk            |
+| `executing-plans`                | Batch execution with checkpoints        |
+| `subagent-driven-development`    | Subagent dispatch with 2-stage review   |
+| `dispatching-parallel-agents`    | Concurrent agents for independent tasks |
+| `systematic-debugging`           | 4-phase root cause process              |
+| `verification-before-completion` | Evidence-based completion               |
+| `requesting-code-review`         | Pre-review checklist + PR format        |
+| `receiving-code-review`          | Structured review response              |
+| `using-git-worktrees`            | Isolated branch workspaces              |
+| `finishing-a-development-branch` | Merge / PR / close                      |
+| `qa-review`                      | Final gate before merge                 |
+| `writing-skills`                 | Author new skills                       |
+| `using-qa-superpowers`           | Orientation and workflow overview       |
 
 ## Philosophy
 
@@ -128,4 +129,4 @@ MEMORY.md is:
 
 ## License
 
-MIT — built by Automuss Technologies Ltd
+MIT — built by Nwaoghor Chukunweiken
