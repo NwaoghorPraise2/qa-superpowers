@@ -1,0 +1,9 @@
+{
+  "name": "qa-superpowers",
+  "description": "QA-first development methodology for Claude Code. Spec → Tests → TDD → QA Review. Extends Superpowers with full QA ownership, MEMORY.md session continuity, and small-chunk discipline.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Nwaoghor Chukunweiken"
+  },
+  "license": "MIT"
+}
