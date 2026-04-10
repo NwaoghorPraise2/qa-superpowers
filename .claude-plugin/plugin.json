@@ -1,10 +1,20 @@
 {
   "name": "qa-superpowers",
-  "description": "QA-first development methodology for Claude Code. Spec → Tests → TDD → QA Review. Extends Superpowers with full QA ownership, MEMORY.md session continuity, and small-chunk discipline.",
+  "description": "QA-first development methodology. Spec → Tests → TDD → QA Review. Full session continuity via MEMORY.md. Small-chunk discipline enforced.",
   "version": "1.0.0",
   "author": {
-    "name": "Nwaoghor Chukunweiken"
+    "name": "Nwaoghor Chukunweiken",
+    "email": "support@automusstech.com"
   },
-  "homepage": "https://github.com/NwaoghorPraise2/qa-superpowers.git",
-  "license": "MIT"
+  "homepage": "https://github.com/NwaoghorPraise2/qa-superpowers",
+  "repository": "https://github.com/NwaoghorPraise2/qa-superpowers",
+  "license": "MIT",
+  "keywords": [
+    "qa",
+    "tdd",
+    "testing",
+    "spec",
+    "methodology",
+    "quality-assurance"
+  ]
 }

@@ -1,5 +1,6 @@
 {
-  "name": "qa-superpowers",
+  "name": "qa-superpowers-dev",
+  "description": "Development marketplace for QA Superpowers plugin",
   "owner": {
     "name": "Nwaoghor Chukunweiken",
     "email": "support@automusstech.com"
@@ -7,16 +8,13 @@
   "plugins": [
     {
       "name": "qa-superpowers",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/NwaoghorPraise2/qa-superpowers.git"
-      },
-      "description": "QA-first development methodology. Spec → Tests → TDD → QA Review. Full session continuity via MEMORY.md. Small-chunk discipline enforced.",
+      "description": "QA-first development methodology. Spec → Tests → TDD → QA Review.",
       "version": "1.0.0",
+      "source": "./",
       "author": {
-        "name": "Nwaoghor Chukunweiken"
-      },
-      "homepage": "https://github.com/NwaoghorPraise2/qa-superpowers.git"
+        "name": "Nwaoghor Chukunweiken",
+        "email": "support@automusstech.com"
+      }
     }
   ]
 }
