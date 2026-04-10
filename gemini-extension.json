@@ -1,0 +1,6 @@
+{
+  "name": "qa-superpowers",
+  "description": "QA-first development methodology. Spec → Tests → TDD → QA Review.",
+  "version": "1.0.0",
+  "contextFileName": "GEMINI.md"
+}
