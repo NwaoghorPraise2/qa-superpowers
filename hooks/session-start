@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+# SessionStart hook for qa-superpowers plugin
+
+set -euo pipefail
+
+# Determine plugin root directory
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+# Allow override for testing
+if [ -n "${CLAUDE_PLUGIN_ROOT:-}" ]; then
+    PLUGIN_ROOT="${CLAUDE_PLUGIN_ROOT}"
+fi
+
+# Read CLAUDE.md content
+claude_md_path="${PLUGIN_ROOT}/CLAUDE.md"
+if [ -f "${claude_md_path}" ]; then
+    claude_md_content=$(cat "${claude_md_path}" 2>&1)
+else
+    claude_md_content="Error: CLAUDE.md not found at ${claude_md_path}"
+fi
+
+# Escape string for JSON embedding
+escape_for_json() {
+    local s="$1"
+    s="${s//\\/\\\\}"
+    s="${s//\"/\\\"}"
+    s="${s//$'\n'/\\n}"
+    s="${s//$'\r'/\\r}"
+    s="${s//$'\t'/\\t}"
+    printf '%s' "$s"
+}
+
+claude_md_escaped=$(escape_for_json "${claude_md_content}")
+session_context="<EXTREMELY_IMPORTANT>\n${claude_md_escaped}\n</EXTREMELY_IMPORTANT>"
+
+# Output context injection as JSON.
+# Cursor hooks expect additional_context (snake_case).
+# Claude Code hooks expect hookSpecificOutput.additionalContext (nested).
+# Copilot CLI (v1.0.11+) and others expect additionalContext (top-level, SDK standard).
+if [ -n "${CURSOR_PLUGIN_ROOT:-}" ]; then
+    printf '{\n  "additional_context": "%s"\n}\n' "${session_context}"
+elif [ -n "${CLAUDE_PLUGIN_ROOT:-}" ] && [ -z "${COPILOT_CLI:-}" ]; then
+    printf '{\n  "hookSpecificOutput": {\n    "hookEventName": "SessionStart",\n    "additionalContext": "%s"\n  }\n}\n' "${session_context}"
+else
+    printf '{\n  "additionalContext": "%s"\n}\n' "${session_context}"
+fi
+
+exit 0
