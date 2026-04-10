@@ -1,5 +1,34 @@
 # Changelog
 
+## v1.1.0 — Multi-Platform Parity
+
+Restructured the plugin to match the [obra/superpowers v5.0.7 standard](https://github.com/obra/superpowers). The plugin now works on all 5 supported platforms and injects session context via a hook on every session start.
+
+### Platform Support Added
+- **Cursor** — `.cursor-plugin/plugin.json` with skills, agents, commands, and hooks references
+- **Codex** — `.codex/INSTALL.md` with git clone + symlink install guide
+- **OpenCode** — `.opencode/INSTALL.md` with `opencode.json` plugin array guide
+- **Gemini CLI** — `gemini-extension.json` + `GEMINI.md` with `@`-include for skill and tool mapping
+
+### Structure
+- Flattened `plugin/` subdirectory — skills and `CLAUDE.md` now live at repo root, matching the obra standard and Claude Code's auto-discovery conventions
+- Removed non-standard `.claude-plugin/manifest.json` — Claude Code does not read this file
+- Updated `.claude-plugin/plugin.json` and `marketplace.json` to the standard obra schema
+- Added `AGENTS.md` (mirrors `CLAUDE.md`) for Codex compatibility
+
+### Hooks
+- Added `hooks/session-start` — bash script that reads `CLAUDE.md` and injects it wrapped in `<EXTREMELY_IMPORTANT>` tags on every session start, across Claude Code, Cursor, and Copilot CLI
+- Added `hooks/hooks.json` (Claude Code), `hooks/hooks-cursor.json` (Cursor), `hooks/run-hook.cmd` (Windows/Unix polyglot launcher)
+
+### Agents & Commands
+- Added `agents/qa-reviewer.md` — QA reviewer agent for spec compliance and gate enforcement
+- Added `commands/qa-review.md` and `commands/define-spec.md` — deprecated slash command stubs pointing to the canonical skills
+
+### Tests
+- Added `tests/hooks/test-session-start.sh` — 5-case TDD test suite for the session-start hook (valid JSON output, additionalContext key, EXTREMELY_IMPORTANT wrapper, CLAUDE.md content inclusion, graceful missing-file handling)
+
+---
+
 ## v1.0.0 — Initial Release
 
 ### New Skills (QA-first additions)
